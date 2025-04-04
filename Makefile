@@ -10,7 +10,7 @@ CFLAGS	=	-Wall -Wextra -Iinclude -g
 
 SRC		=	src/my_revstr.c
 OBJ		=	$(SRC:.c=.o)
-NAME	=	revstr
+NAME	=	bin_name
 
 TEST_SRC = tests/test_my_revstr.c
 TEST_NAME = unit_tests

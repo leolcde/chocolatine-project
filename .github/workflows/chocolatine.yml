@@ -67,19 +67,17 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-
       - name: Build and Run Tests
         run: make tests_run
 
   push_to_mirror:
     needs: run_tests
-    if: github.event_name == 'push' && !startsWith(github.ref, 'refs/heads/ga-ignore-') && github.repository != vars.MIRROR_URL
+    if: github.event_name == 'push' &&
+        !startsWith(github.ref, 'refs/heads/ga-ignore-') &&
+        github.repository != env.MIRROR_URL
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
+      - uses: actions/checkout@v4
       - name: Mirror to Epitech repository
         uses: pixta-dev/repository-mirroring-action@v1
         with:
