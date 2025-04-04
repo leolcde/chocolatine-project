@@ -12,7 +12,7 @@ SRC		=	main.c my_revstr.c
 OBJ		=	$(SRC:.c=.o)
 NAME	=	revstr
 
-TEST_SRC = testss/test_my_revstr.c
+TEST_SRC = tests/test_my_revstr.c
 TEST_NAME = unit_tests
 LDFLAGS = -lcriterion
 
