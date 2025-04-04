@@ -49,6 +49,7 @@ jobs:
       - name: Clean the build
         run: make clean
       - name: Check executables
+        shell: bash
         run: |
           IFS=',' read -ra EXECS <<< "$EXECUTABLES"
           for exec in "${EXECS[@]}"; do
