@@ -1,14 +1,14 @@
 ##
 ## EPITECH PROJECT, 2024
-## Makefile
+## mkfile
 ## File description:
-## Compiles and runs project and unit tests
+## mkfile
 ##
 
 CC		=	gcc
 CFLAGS	=	-Wall -Wextra -Iinclude -g
 
-SRC		=	main.c my_revstr.c
+SRC		=	src/my_revstr.c
 OBJ		=	$(SRC:.c=.o)
 NAME	=	revstr
 
@@ -18,15 +18,18 @@ LDFLAGS = -lcriterion
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+$(NAME): $(OBJ) main.o
+	$(CC) $(OBJ) main.o -o $(NAME)
+
+main.o: main.c
+	$(CC) $(CFLAGS) -c main.c -o main.o
 
 tests_run: $(SRC) $(TEST_SRC)
 	$(CC) $(SRC) $(TEST_SRC) -o $(TEST_NAME) $(CFLAGS) $(LDFLAGS)
-	@./$(TEST_NAME)
+	./$(TEST_NAME)
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) main.o
 
 fclean: clean
 	rm -f $(NAME) $(TEST_NAME)

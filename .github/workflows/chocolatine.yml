@@ -60,18 +60,16 @@ jobs:
           done
 
   run_tests:
-    needs: check_program_compilation
-    if: github.repository != 'EpitechPGEPromo2029/B-DOP-200-STG-2-1-chocolatine-adrien.raphanaud'
-    name: Run tests
+    name: Run Criterion Unit Tests
     runs-on: ubuntu-latest
     container:
       image: epitechcontent/epitest-docker:latest
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v3
-      - name: Run tests
+
+      - name: Build and Run Tests
         run: make tests_run
-        timeout-minutes: 2
 
   push_to_mirror:
     needs: run_tests

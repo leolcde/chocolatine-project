@@ -1,13 +1,12 @@
 /*
-** EPITECH PROJECT, 2024
-** Unit Test for my_revstr
+** EPITECH PROJECT, 2025
+** chocolatine-project
 ** File description:
-** Tests my_revstr with Criterion
+** test_my_revstr
 */
 
 #include <criterion/criterion.h>
-
-char *my_revstr(char *str);
+#include "../my.h"
 
 Test(my_revstr, reverse_simple_string)
 {
@@ -15,4 +14,3 @@ Test(my_revstr, reverse_simple_string)
     my_revstr(str);
     cr_assert_str_eq(str, "fedcba");
 }
-

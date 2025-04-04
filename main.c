@@ -1,16 +1,18 @@
 /*
-** EPITECH PROJECT, 2024
-** Chocolatine
+** EPITECH PROJECT, 2025
+** chocolatine-project
 ** File description:
-** git action test
+** main
 */
 
 #include <stdio.h>
+#include "my.h"
 
 int main(void)
 {
     char str[] = "prout";
-    char *result = my_revstr(str);
 
-    printf("%s\n", result);
+    my_revstr(str);
+    printf("%s\n", str);
+    return 0;
 }

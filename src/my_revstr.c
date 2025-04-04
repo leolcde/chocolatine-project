@@ -5,6 +5,8 @@
 ** my_revstr
 */
 
+#include "../my.h"
+
 int my_strlen(char const *str)
 {
     int i = 0;
@@ -16,9 +18,8 @@ int my_strlen(char const *str)
 
 void my_swap_char(char *a, char *b)
 {
-    char temp;
+    char temp = *a;
 
-    temp = *a;
     *a = *b;
     *b = temp;
 }
@@ -26,13 +27,8 @@ void my_swap_char(char *a, char *b)
 char *my_revstr(char *str)
 {
     int len = my_strlen(str);
-    int i = 0;
-    int j = len - 1;
 
-    while (i < j) {
-        my_swap_char(&str[i], &str[j]);
-        i++;
-        j--;
-    }
+    for (int i = 0; i < len / 2; i++)
+        my_swap_char(&str[i], &str[len - i - 1]);
     return str;
 }
