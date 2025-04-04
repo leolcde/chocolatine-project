@@ -43,5 +43,6 @@ int main(void)
 {
     char str[] = "prout";
     char *result = my_revstr(str);
+
     printf("%s\n", result);
 }
