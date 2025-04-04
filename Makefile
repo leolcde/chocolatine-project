@@ -11,7 +11,7 @@ SRC		=	main.c
 
 OBJ		=	$(SRC:.c=.o)
 
-NAME	=	bin
+NAME	=	bin_name
 
 CFLAGS	+= -g
 
