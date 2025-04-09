@@ -8,9 +8,10 @@
 #include <stdio.h>
 #include "my.h"
 
-int main()
+int main(void)
 {
     char str[] = "prout";
+
     my_revstr(str);
     printf("%s\n", str);
     return 0;
